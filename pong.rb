@@ -1,12 +1,17 @@
 require "bundler/setup"
 require "hasu"
 
+Hasu.load "default_config.rb"
+Hasu.load "my_config.rb"
+
+CONFIG = MyConfig.new
+
 Hasu.load "ball.rb"
 Hasu.load "paddle.rb"
 
 class Pong < Hasu::Window
-  WIDTH = 768
-  HEIGHT = 576
+  WIDTH = CONFIG.pong.width
+  HEIGHT = CONFIG.pong.height
 
   def initialize
     super(WIDTH, HEIGHT, false)

@@ -1,7 +1,8 @@
 class Ball
-  SIZE = 16
+  SIZE = CONFIG.ball.size
 
   attr_reader :x, :y, :angle, :speed
+
   def initialize
     @x = Pong::WIDTH/2
     @y = Pong::HEIGHT/2

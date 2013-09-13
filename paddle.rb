@@ -1,7 +1,7 @@
 class Paddle
-  WIDTH = 16
-  HEIGHT = 96
-  SPEED = 6
+  WIDTH = CONFIG.paddle.width
+  HEIGHT = CONFIG.paddle.height
+  SPEED = CONFIG.paddle.speed
 
   attr_reader :side, :y, :ai
   alias ai? ai
