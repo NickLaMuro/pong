@@ -19,6 +19,8 @@ class DefaultConfig
     pong.height = 576
 
     ball.size = 10
+    ball.speed = 6
+    ball.color = :red
 
     paddle.width = 16
     paddle.height = 96

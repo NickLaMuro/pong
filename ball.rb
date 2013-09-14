@@ -8,8 +8,8 @@ class Ball
     @y = Pong::HEIGHT/2
 
     @angle = rand(120) + 30
-    @angle *= -1  if rand > 0.5
-    @speed = 6
+    @angle *= -1 if rand > 0.5
+    @speed = CONFIG.ball.speed
   end
 
   def dx; Gosu.offset_x(angle, speed); end
@@ -39,8 +39,14 @@ class Ball
   def y1; @y - SIZE/2; end
   def y2; @y + SIZE/2; end
 
+  def gosu_color
+    Gosu::Color.const_get CONFIG.ball.color.to_s.upcase
+  rescue NameError
+    Gosu::Color::RED
+  end
+
   def draw(window)
-    color = Gosu::Color::RED
+    color = gosu_color
 
     window.draw_quad(
       x1, y1, color,
