@@ -19,6 +19,7 @@ class MyConfig < DefaultConfig
     ball.size = 10
     ball.speed = 6
 
+    paddle.color = :white
     paddle.width = 16
     paddle.height = 96
     paddle.speed = 6

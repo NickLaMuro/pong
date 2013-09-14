@@ -42,8 +42,14 @@ class Paddle
     y1 + HEIGHT
   end
 
+  def gosu_color
+    Gosu::Color.const_get CONFIG.paddle.color.to_s.upcase
+  rescue NameError
+    Gosu::Color::WHITE
+  end
+
   def draw(window)
-    color = Gosu::Color::WHITE
+    color = gosu_color
 
     window.draw_quad(
       x1, y1, color,
