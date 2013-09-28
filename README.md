@@ -5,6 +5,7 @@ Open a terminal app like Terminal.app or GTerm and run:
 ```bash
 git clone https://github.com/jphenow/pong.git
 cd pong
+bundle install
 ruby pong.rb
 ```
 
